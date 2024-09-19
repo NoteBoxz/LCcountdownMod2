@@ -13,15 +13,19 @@ namespace LCcountdownMod2
         public TMP_Text TXT;
         public Image Sprite;
         public Animator anim;
-
-        public void Count(string TXT5REAL,int TextSize)
+        public void Start()
+        {
+            SetColors();
+        }
+        public void Count(string TXT5REAL, int TextSize)
         {
             anim.Play("CountDown");
             SFX.Play();
             TXT.text = TXT5REAL;
             TXT.fontSize = TextSize;
         }
-        public void SetColors(){
+        public void SetColors()
+        {
             TXT.color = ParseColor(LCcountdownMod2.TextColor);
             Sprite.color = ParseColor(LCcountdownMod2.CircleColor);
         }

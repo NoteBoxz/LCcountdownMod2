@@ -20,7 +20,7 @@ namespace LCcountdownMod2
         internal new static ManualLogSource Logger { get; private set; } = null!;
         internal static Harmony? Harmony { get; set; }
 
-        public static bool DebugMode = true, SpawnCountdownInfrountOfUI, StartCountdownWhenShipLeaveEarly, StopCountdownAfter12Am, StopCountdownAfterDeath, StopCountdownAfterShipLeaves, StopCountdownAfterTwelve;
+        public static bool DebugMode = false, SpawnCountdownInfrountOfUI, StartCountdownWhenShipLeaveEarly, StopCountdownAfter12Am, StopCountdownAfterDeath, StopCountdownAfterShipLeaves, StopCountdownAfterTwelve;
         public static GameObject countdownPrefab;
         public static Countdowner CountDownInstace;
         public static string TextColor = "(214,98,41,255)", CircleColor = "(214,98,41,255)";
@@ -52,7 +52,7 @@ namespace LCcountdownMod2
             var textColorConfig = Config.Bind("Colors", "Text Color", "(214,98,41,255)", "Color for the text. Format: (R,G,B,A)");
             var circleColorConfig = Config.Bind("Colors", "Circle Color", "(214,98,41,255)", "Color for the circle. Format: (R,G,B,A)");
             var startCountdownWhenShipLeaveEarlyConfig = Config.Bind("Countdown", "Start Countdown When Ship Leaves Early", true, "Start the countdown when the ship leaves early");
-            var stopCountdownAfter12AmConfig = Config.Bind("Countdown", "Stop Countdown After 12 AM", true, "Stop the countdown after 12 AM");
+            var stopCountdownAfter12AmConfig = Config.Bind("Countdown", "Stop Countdown After 12 AM", false, "Stop the countdown after 12 AM");
             var stopCountdownAfterDeathConfig = Config.Bind("Countdown", "Stop Countdown After Death", true, "Stop the countdown after death");
             var stopCountdownAfterShipLeavesConfig = Config.Bind("Countdown", "Stop Countdown After Ship Leaves", true, "Stop the countdown after the ship leaves");
             var stopCountdownAfterTwelveConfig = Config.Bind("Countdown", "Stop Countdown After Twelve", true, "Stop the countdown after twelve");
