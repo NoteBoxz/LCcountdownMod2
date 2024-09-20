@@ -26,6 +26,7 @@ namespace LCcountdownMod2
         public static string TextColor = "(214,98,41,255)", CircleColor = "(214,98,41,255)";
         public static string[] Txts = ["10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0"];
         public static int[] TxtSizes = [36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36];
+
         private ConfigEntry<string>[] txtConfigs;
         private ConfigEntry<int>[] txtSizeConfigs;
         private void Awake()

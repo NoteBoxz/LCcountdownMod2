@@ -96,14 +96,17 @@ namespace LCcountdownMod2
 				{
 					if (___currentDayTime >= 1079f && LCcountdownMod2.StopCountdownAfterTwelve && !DisableDisabler)
 					{
+						StopCountdown();
 						return;
 					}
 					if (StartOfRound.Instance.shipIsLeaving && LCcountdownMod2.StopCountdownAfterShipLeaves && !DisableDisabler)
 					{
+						StopCountdown();
 						return;
 					}
 					if (GameNetworkManager.Instance.localPlayerController.isPlayerDead && LCcountdownMod2.StopCountdownAfterDeath)
 					{
+						StopCountdown();
 						return;
 					}
 					StartCountdown(___currentLevel);
@@ -120,14 +123,17 @@ namespace LCcountdownMod2
 			{
 				if (___currentDayTime >= 1079f && LCcountdownMod2.StopCountdownAfterTwelve && !DisableDisabler)
 				{
+					StopCountdown();
 					return;
 				}
 				if (StartOfRound.Instance.shipIsLeaving && LCcountdownMod2.StopCountdownAfterShipLeaves && !DisableDisabler)
 				{
+					StopCountdown();
 					return;
 				}
 				if (GameNetworkManager.Instance.localPlayerController.isPlayerDead && LCcountdownMod2.StopCountdownAfterDeath)
 				{
+					StopCountdown();
 					return;
 				}
 				StartCountdown(___currentLevel);
@@ -158,6 +164,10 @@ namespace LCcountdownMod2
 					StopCountdown();
 				}
 				if (GameNetworkManager.Instance.localPlayerController.isPlayerDead && LCcountdownMod2.StopCountdownAfterDeath)
+				{
+					StopCountdown();
+				}
+				if (StartOfRound.Instance.inShipPhase)
 				{
 					StopCountdown();
 				}
